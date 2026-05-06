@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import RandomChar from "../components/randomChar/RandomChar";
@@ -16,6 +16,15 @@ const MainPage = () => {
     setChar(id);
   };
 
+  const targetRef = useRef(null);
+
+  const onScrollToInfo = () => {
+    targetRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <>
       <Helmet>
@@ -27,11 +36,14 @@ const MainPage = () => {
       </ErrorBoundary>
       <div className="char__content">
         <ErrorBoundary>
-          <CharList onCharSelected={onCharSelected} />
+          <CharList
+            onCharSelected={onCharSelected}
+            onScrollToInfo={onScrollToInfo}
+          />
         </ErrorBoundary>
         <div>
           <ErrorBoundary>
-            <CharInfo charId={char} />
+            <CharInfo charId={char} charTarget={targetRef} />
           </ErrorBoundary>
           <ErrorBoundary>
             <CharSearchForm />

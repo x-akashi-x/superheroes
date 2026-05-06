@@ -60,6 +60,15 @@ input::-webkit-inner-spin-button {
     }
 }
 
+@media (max-width: 360px) {
+  .app{
+    width: auto;
+    .bg-decoration {
+        display: none;
+    }
+  }
+}
+
 main {
     margin-top: 50px;
     position: relative;

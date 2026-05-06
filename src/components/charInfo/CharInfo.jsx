@@ -3,7 +3,7 @@ import useMarvelService from "@services/useMarvelService";
 import Skeleton from "../skeleton/Skeleton";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
-import './charInfo.scss';
+import "./charInfo.scss";
 
 const CharInfo = (props) => {
   const [char, setChar] = useState(null);
@@ -34,7 +34,7 @@ const CharInfo = (props) => {
   const content = !(loading || error || !char) ? <View char={char} /> : null;
 
   return (
-    <div className="char__info">
+    <div className="char__info" ref={props.charTarget}>
       {skeleton}
       {errorMessage}
       {spinner}
@@ -49,7 +49,7 @@ const View = ({ char }) => {
   return (
     <>
       <div className="char__basics">
-        <img src={thumbnail} alt={name} style={{'objectFit' : 'cover'}} />
+        <img src={thumbnail} alt={name} style={{ objectFit: "cover" }} />
         <div>
           <div className="char__info-name">{name}</div>
           <div className="char__btns">
@@ -67,7 +67,6 @@ const View = ({ char }) => {
       <ul className="char__comics-list">
         {comics.length > 0 ? null : "There is no comics with this character"}
         {comics.map((item, i) => {
-          
           if (i > 9) return;
           return (
             <li key={i} className="char__comics-item">
