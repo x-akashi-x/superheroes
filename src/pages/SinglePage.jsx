@@ -5,6 +5,7 @@ import useMarvelService from "@services/useMarvelService";
 import Spinner from "../components/spinner/Spinner";
 import ErrorMessage from "../components/errorMessage/ErrorMessage";
 import AppBanner from "../components/appBanner/AppBanner";
+import { useHttp } from "../hooks/useHttp";
 
 const SinglePage = ({ Component, dataType }) => {
   const { id } = useParams();
@@ -34,7 +35,9 @@ const SinglePage = ({ Component, dataType }) => {
 
   const errorMessage = error ? <ErrorMessage /> : null;
   const spinner = loading ? <Spinner /> : null;
-  const content = !(loading, error, !data) ? <Component data={data} /> : null;
+  const content = !(loading || error || !data) ? (
+    <Component data={data} />
+  ) : null;
 
   return (
     <>
@@ -46,4 +49,4 @@ const SinglePage = ({ Component, dataType }) => {
   );
 };
 
-export default SinglePage
+export default SinglePage;

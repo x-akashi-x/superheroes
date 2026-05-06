@@ -5,10 +5,12 @@ const useMarvelService = () => {
 
   const _apiBase = "https://marvel-server-zeta.vercel.app/";
   const _apiKey = "apikey=d4eecb0c66dedbfae4eab45d312fc1df";
-  const _baseOffset = 0 
+  const _baseOffset = 0;
 
   const getAllCharacters = async (offset = _baseOffset) => {
-    const res = await request(`${_apiBase}characters?limit=6&offset=${offset}&${_apiKey}`);
+    const res = await request(
+      `${_apiBase}characters?limit=6&offset=${offset}&${_apiKey}`,
+    );
     return res.data.results.map(_transformCharacter);
   };
 
@@ -23,7 +25,9 @@ const useMarvelService = () => {
   };
 
   const getAllComics = async (offset = _baseOffset) => {
-    const res = await request(`${_apiBase}comics?limit=8&offset=${offset}&${_apiKey}`);
+    const res = await request(
+      `${_apiBase}comics?limit=8&offset=${offset}&${_apiKey}`,
+    );
     return res.data.results.map(_transformComics);
   };
 
@@ -49,7 +53,8 @@ const useMarvelService = () => {
     return {
       id: comics.id,
       title: comics.title,
-      description: comics.description || "There is no description for this comics",
+      description:
+        comics.description || "There is no description for this comics",
       pageCount: comics.pageCount
         ? `${comics.pageCount} р.`
         : "No information about the number of pages",
