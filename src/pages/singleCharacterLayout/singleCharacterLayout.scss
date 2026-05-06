@@ -21,3 +21,12 @@
         margin-top: 25px;
     }
 }
+
+@media(max-width: 360px) {
+  .single-comic{
+    grid-template-columns: auto;
+    place-items: center;
+    text-align: center;
+    row-gap: 20px;
+  }
+}

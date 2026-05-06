@@ -37,3 +37,12 @@
         }
     }
 }
+
+@media (max-width: 360px) {
+  .single-comic{
+    grid-template-columns: auto;
+    &__back{
+      padding-right: 20px;
+    }
+  }
+}
