@@ -106,7 +106,7 @@ const CharList = (props) => {
       <button
         disabled={newItemLoading}
         style={{ display: charEnded ? "none" : "block" }}
-        className="button button__main button__long"
+        className="button button__long"
         onClick={() => onRequest(offset)}
       >
         <div className="inner">load more</div>

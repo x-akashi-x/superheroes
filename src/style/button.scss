@@ -82,6 +82,9 @@
     &.button__main::before, &.button__main::after {
         background-color: $main-color;
     }
+    &.button__long::before, &.button__long::after {
+        background-color: $main-color;
+    }
     &.button__secondary::before, &.button__secondary::after {
         background-color: $grey;
     }
@@ -95,7 +98,7 @@
 
 @media(max-width:1125px) {
   .button__main{
-    margin-right: 20px;
+    margin-right: 20px !important;
   }
   .button__secondary{
     margin-right: 20px;
