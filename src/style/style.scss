@@ -48,21 +48,22 @@ input::-webkit-inner-spin-button {
 }
 
 .app {
-    width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 50px 0 50px 0;
+    padding: 50px 25px 50px 25px;
     position: relative;
     .bg-decoration {
         position: absolute;
-        right: -174px;
-        bottom: -70px;
+        right: 0;
+        bottom: -120px;
         z-index: -1;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 850px) {
   .app{
     width: auto;
+    padding: 50px 0px 50px 0px;
     .bg-decoration {
         display: none;
     }

@@ -24,7 +24,7 @@
       align-items: center;
       input {
         padding: 0 10px;
-        width: 270px;
+        width: 100%;
         height: 38px;
         border: none;
         background: #ffffff;
@@ -48,11 +48,5 @@
       line-height: 24px;
       color: #03710e;
     }
-  }
-}
-
-@media (max-width: 400px) {
-  .char__search-wrapper input {
-    width: 205px;
   }
 }

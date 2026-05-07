@@ -41,6 +41,8 @@
     padding: 40px 35px;
     background-color: $dark;
     position: relative;
+    overflow: hidden;
+    height: 100%;
     button {
       margin-top: 13px;
     }
@@ -65,9 +67,8 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 1125px) {
   .randomchar {
-    display: block;
     &__btns {
       display: flex;
       flex-direction: column;
@@ -79,8 +80,11 @@
     &__info {
       grid-template-rows: minmax(29px, auto) 90px auto;
     }
-    &__static {
-      overflow: hidden;
-    }
+  }
+}
+
+@media (max-width: 850px) {
+  .randomchar {
+    display: block;
   }
 }
